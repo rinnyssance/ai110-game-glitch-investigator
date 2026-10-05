@@ -33,6 +33,75 @@ My debugging process was:
 
 ---
 
+## 🎮 Demo Walkthrough
+
+Here is an example of how the repaired game works from start to finish.
+
+1. The player selects **Normal** difficulty.
+   - Range: `1–100`
+   - Attempts allowed: `8`
+
+2. The game generates a secret number. For this example, the secret number is:
+
+   ```text
+   19
+   ```
+
+3. The player guesses:
+
+   ```text
+   50
+   ```
+
+   The game correctly responds:
+
+   ```text
+   Too High
+   📉 Go LOWER!
+   ```
+
+4. The player guesses:
+
+   ```text
+   25
+   ```
+
+   The game responds:
+
+   ```text
+   Too High
+   📉 Go LOWER!
+   ```
+
+5. The player guesses:
+
+   ```text
+   10
+   ```
+
+   The game responds:
+
+   ```text
+   Too Low
+   📈 Go HIGHER!
+   ```
+
+6. The player narrows the range and guesses:
+
+   ```text
+   19
+   ```
+
+7. The game recognizes the correct guess and responds:
+
+   ```text
+   🎉 Correct!
+   ```
+
+8. The game displays the winning message and final score.
+
+Throughout the game, the attempt counter, guess history, and score update as guesses are submitted. The repaired hint logic consistently directs the player toward the secret number, and the secret remains a numeric value throughout the game.
+
 ## 🐛 Glitches I Found
 
 ### Bug 1: Contradictory Guess Hints
@@ -161,6 +230,7 @@ f"Guess a number between {low} and {high}."
 ```
 
 ---
+
 
 ### New Game Reset
 
